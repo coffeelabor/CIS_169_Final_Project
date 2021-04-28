@@ -1,8 +1,20 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿
+@{
+    Layout = null;
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Monthly Payment Calclulator</title>
+</head>
+<body>
+    <h1>Monthly Payment Calculator</h1>
+    <p>Loan Amount: @ViewBag.loanAmount.ToString("G") </p>
+    <p>Interest Rate: @ViewBag.interestRate.ToString("P")  </p>
+    <p>Years of Loan: @ViewBag.yearsOfLoan.ToString("G") </p>
+    <p>Monthly Payments = @ViewBag.monthlyPayment.ToString("C2")  </p>
+</body>
+</html>

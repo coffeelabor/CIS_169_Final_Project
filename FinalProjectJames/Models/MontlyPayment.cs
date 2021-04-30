@@ -54,6 +54,13 @@ namespace FinalProjectJames.Models
         }
         //Constructor
         public MontlyPayment() { }
+
+        public MontlyPayment(double loanAmount, decimal interestRate, int yearsOfLoan)
+        {
+            LoanAmount = loanAmount;
+            YearsOfLoan = yearsOfLoan;
+            InterestRate = interestRate;
+        }
         //Methods
         public decimal GetMontlyInterestRate(decimal iRate)
         {
@@ -71,6 +78,10 @@ namespace FinalProjectJames.Models
             return totalPayments;
         }
 
+        public double GetMontlyPayment()
+        {
+            return 1.1;
+        }
 
     }
 }

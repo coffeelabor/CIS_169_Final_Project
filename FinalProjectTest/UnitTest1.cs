@@ -37,6 +37,14 @@ namespace FinalProjectTest
             int lessThanOne = 0;
             Assert.Throws<ArgumentOutOfRangeException>(() => mp.YearsOfLoan = lessThanOne);
         }
+        [Fact]
+        public void TestConstructorWithParams()
+        {
+            FinalProjectJames.Models.MontlyPayment mp = new FinalProjectJames.Models.MontlyPayment(10.05, .05M, 30);
+            double expected = 10.05;
+            double actual = mp.LoanAmount;
+            Assert.Equal(expected, actual);
+        }
 
         [Fact]
         public void TestGetMonthlyRate()
@@ -55,6 +63,17 @@ namespace FinalProjectTest
             int expected = 360;
             int actual = mp.GetNumLoanLifePayments(testYears);
             Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void GetMonthlyPayment()
+        {
+            FinalProjectJames.Models.MontlyPayment mp = new FinalProjectJames.Models.MontlyPayment();
+            double testMonthPay = 1.1;
+            double expected = 1073.64;
+            double actual = mp.GetMontlyPayment();
+            Assert.Equal(expected, actual);
+
         }
 
     }

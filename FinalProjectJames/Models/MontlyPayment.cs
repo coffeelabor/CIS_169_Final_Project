@@ -57,9 +57,18 @@ namespace FinalProjectJames.Models
         //Methods
         public decimal GetMontlyInterestRate(decimal iRate)
         {
+            int decimalPlaces = 6;
+            int months = 12;
             decimal mRate;
-            mRate = iRate;
+            mRate = iRate/months;
+            mRate = Decimal.Round(mRate, decimalPlaces);
             return mRate;
+        }
+        public int GetNumLoanLifePayments(int lYears)
+        {
+            int months = 12;
+            int totalPayments = lYears * months;
+            return totalPayments;
         }
 
 

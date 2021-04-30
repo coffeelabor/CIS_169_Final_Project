@@ -87,6 +87,13 @@ namespace FinalProjectTest
             Assert.Equal(expected, actual);
 
         }
-
+        [Fact]
+        public void DisplayOverride()
+        {
+            FinalProjectJames.Models.MontlyPayment mp = new FinalProjectJames.Models.MontlyPayment(200000, .05M, 30);
+            string expected = "Montly Payment Calculator\nLoan Amount: $200,000.00\nInterest Rate: 5.00%\nLife of Loan: 30 years\nMontly Payments: $1,073.64";
+            string actual = mp.ToString();
+            Assert.Equal(expected, actual);            
+        }
     }
 }

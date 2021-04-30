@@ -96,5 +96,11 @@ namespace FinalProjectJames.Models
             return _montlyPayment;
         }
 
+        public override string ToString()
+        {
+            GetMontlyPayment();
+            return string.Format("Montly Payment Calculator\nLoan Amount: {0:C2}\nInterest Rate: {1:P}\nLife of Loan: {2} years\nMontly Payments: {3:C2}", LoanAmount, InterestRate, YearsOfLoan, MonthlyPayment);
+        }
+
     }
 }

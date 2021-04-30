@@ -64,7 +64,7 @@ namespace FinalProjectJames.Models
         //Methods
         public decimal GetMontlyInterestRate(decimal iRate)
         {
-            int decimalPlaces = 6;
+            int decimalPlaces = 8;
             int months = 12;
             decimal mRate;
             mRate = iRate/months;
@@ -78,9 +78,22 @@ namespace FinalProjectJames.Models
             return totalPayments;
         }
 
-        public double GetMontlyPayment()
+        public double CompoundHelper()
         {
-            return 1.1;
+            double doubleValue = decimal.ToDouble(GetMontlyInterestRate(InterestRate));
+            double compoundHelper =Math.Pow((1 + doubleValue), GetNumLoanLifePayments(YearsOfLoan));           
+            return compoundHelper;
+        }
+
+        public double GetMontlyPayment()
+        { 
+
+            double doubleValue = decimal.ToDouble(GetMontlyInterestRate(InterestRate));
+            double numerator= doubleValue*CompoundHelper();
+            double denomitaor = CompoundHelper() -1;
+            double mPayment = LoanAmount * (numerator / denomitaor);
+            _montlyPayment = Math.Round(mPayment, 2);
+            return _montlyPayment;
         }
 
     }

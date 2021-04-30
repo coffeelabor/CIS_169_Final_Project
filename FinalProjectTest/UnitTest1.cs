@@ -41,9 +41,15 @@ namespace FinalProjectTest
         public void TestConstructorWithParams()
         {
             FinalProjectJames.Models.MontlyPayment mp = new FinalProjectJames.Models.MontlyPayment(10.05, .05M, 30);
-            double expected = 10.05;
-            double actual = mp.LoanAmount;
-            Assert.Equal(expected, actual);
+            double expectedL = 10.05;
+            decimal expectedI = .05M;
+            int expectedY = 30;
+            double actualL = mp.LoanAmount;
+            decimal actualI = mp.InterestRate;
+            int actualY = mp.YearsOfLoan;
+            Assert.Equal(expectedL, actualL);
+            Assert.Equal(expectedI, actualI);
+            Assert.Equal(expectedY, actualY);
         }
 
         [Fact]
@@ -51,7 +57,7 @@ namespace FinalProjectTest
         {
             FinalProjectJames.Models.MontlyPayment mp = new FinalProjectJames.Models.MontlyPayment();
             decimal testRate = .05M;
-            decimal expected = 0.004167M;
+            decimal expected = 0.00416667M;
             decimal actual = mp.GetMontlyInterestRate(testRate);
             Assert.Equal(expected, actual);
         }
@@ -64,12 +70,18 @@ namespace FinalProjectTest
             int actual = mp.GetNumLoanLifePayments(testYears);
             Assert.Equal(expected, actual);
         }
-
+        [Fact]
+        public void TestCompoundHelper()
+        {
+            FinalProjectJames.Models.MontlyPayment mp = new FinalProjectJames.Models.MontlyPayment(200000, .05M, 30);
+            double expected = 4.46774965;
+            double actual = Math.Round(mp.CompoundHelper(), 8);
+            Assert.Equal(expected, actual);
+        }
         [Fact]
         public void GetMonthlyPayment()
         {
-            FinalProjectJames.Models.MontlyPayment mp = new FinalProjectJames.Models.MontlyPayment();
-            double testMonthPay = 1.1;
+            FinalProjectJames.Models.MontlyPayment mp = new FinalProjectJames.Models.MontlyPayment(200000, .05M, 30);          
             double expected = 1073.64;
             double actual = mp.GetMontlyPayment();
             Assert.Equal(expected, actual);

@@ -13,13 +13,7 @@ namespace FinalProjectJames.Controllers
         {
             ViewBag.MonPayment = 0;
             return View();
-            /*
-            ViewBag.loanAmount = 15000;
-            ViewBag.interestRate = .03;
-            ViewBag.yearsOfLoan = 15;
-            ViewBag.monthlyPayment = 1000.33;
-            return View();
-            */
+            
         }
 
         [HttpPost]

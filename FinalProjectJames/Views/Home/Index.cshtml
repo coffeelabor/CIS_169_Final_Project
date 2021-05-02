@@ -14,7 +14,6 @@
 <body>
     <h1>Monthly Payment Calculator</h1>
     <form asp-action="Index", method="post">
-
         <div>
             <label asp-for="LoanAmount">Loan Amount: </label>
             <input asp-for="LoanAmount"/>
@@ -29,15 +28,11 @@
         </div>
         <div>
             <label>Monthly Payment:</label>
-            <input value="@ViewBag.MonthlyPayment.ToString("C2")" readonly/>
+            <input value="@ViewBag.MonPayment.ToString("C2")" readonly/>
         </div>
         <button type="submit">Calculate</button>
         <a asp-action="Index">Clear</a>
     </form>
-
-
-
-
     @*
     <p>Loan Amount: @ViewBag.loanAmount.ToString("G") </p>
     <p>Interest Rate: @ViewBag.interestRate.ToString("P")  </p>

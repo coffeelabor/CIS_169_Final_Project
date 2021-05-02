@@ -28,5 +28,7 @@ enter data for:
 2. Interest rate (must be a number between 0 and 1 non inclusive)
 3. Years of Loan (must be a number 1 or greater)
 4. Montly Payment is a read only field, not data to enter
+
+
 Click calculate button to calculate montly data
 click clear to reset program or start over

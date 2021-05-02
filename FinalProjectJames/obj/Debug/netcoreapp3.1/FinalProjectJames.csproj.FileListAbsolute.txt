@@ -102,3 +102,4 @@ C:\Users\Reed\Documents\6_DMACC\CIS_169_Final_Project\FinalProjectJames\obj\Debu
 C:\Users\Reed\Documents\6_DMACC\CIS_169_Final_Project\FinalProjectJames\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\Reed\Documents\6_DMACC\CIS_169_Final_Project\FinalProjectJames\obj\Debug\netcoreapp3.1\FinalProjectJames.RazorTargetAssemblyInfo.cs
 C:\Users\Reed\Documents\6_DMACC\CIS_169_Final_Project\FinalProjectJames\obj\Debug\netcoreapp3.1\FinalProjectJames.Views.pdb
+C:\Users\Reed\Documents\6_DMACC\CIS_169_Final_Project\FinalProjectJames\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
